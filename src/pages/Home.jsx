@@ -53,7 +53,7 @@ function Inicio() {
 			<div className="contacts">
 				{datos.store.contactos.length === 0 && !datos.store.cargando ? (
 					<p>No hay contactos aún.</p>
-				) : (
+) : (
 					datos.store.contactos.map(function(c) {
 									   return <ContactCard key={c.id} contacto={c} editar={editar} borrar={borrar} />
 					})
