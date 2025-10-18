@@ -4,10 +4,10 @@ import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { useNavigate, useParams } from "react-router-dom";
 
 function Contacto() {
-  const editando = params.id ? true : false;
   const datos = useGlobalReducer();
   const navegar = useNavigate();
   const params = useParams();
+  const editando = params.id ? true : false;
   const [form, setForm] = useState({ name: "", phone: "", email: "", address: "" });
   const [error, setError] = useState("");
 
@@ -18,9 +18,9 @@ function Contacto() {
   function enviar(evento) {
     evento.preventDefault();
     setError("");
-    var campos = [form.name, form.phone, form.email, form.address];
-    var vacio = false;
-    for (var i = 0; i < campos.length; i++) {
+    const campos = [form.name, form.phone, form.email, form.address];
+    let vacio = false;
+    for (let i = 0; i < campos.length; i++) {
       if (campos[i] === "") {
         vacio = true;
       }
